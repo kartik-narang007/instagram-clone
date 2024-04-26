@@ -7,6 +7,7 @@ import {
   PaperAirplaneIcon,
   MenuIcon,
 } from "@heroicons/react/outline";
+import { HomeIcon } from "@heroicons/react/solid";
 
 function Header() {
   return (
@@ -48,6 +49,24 @@ function Header() {
         </div>
 
         {/** Right */}
+
+        <div className="flex items-center justify-end space-x-4">
+          <HomeIcon className="navBtn" />
+          <div className="navBtn relative flex items-center justify-center">
+            <PaperAirplaneIcon className="navBtn rotate-45" />
+            <div className="absolute -top-1 -right-2 bg-red-400 rounded-full h-5 w-5 flex items-center justify-center animate-pulse text-white">
+              3
+            </div>
+          </div>
+          <PlusCircleIcon className="navBtn" />
+          <UserGroupIcon className="navBtn" />
+          <HeartIcon className="navBtn" />
+          <img
+            src="https://avatars.githubusercontent.com/u/117761902?v=4"
+            alt="Profile"
+            className="h-10 w-10 rounded-full cursor-pointer"
+          />
+        </div>
       </div>
     </div>
   );
