@@ -40,9 +40,14 @@ import {
         </div>
 
         {/** Caption */}
+
+        <p className="p-5 truncate"><span className="font-bold mr-2">{userName}</span>{caption}</p>
   
         {/** Comments */}
-  
+          <form className="flex items-center p-4">
+            <EmojiHappyIcon className="btn"/>
+            <input type="text" placeholder="Add a comment..." className="border-none flex-1 focus:ring-0 outline-none"/>
+          </form>
         {/** Input box */}
       </div>
     );
