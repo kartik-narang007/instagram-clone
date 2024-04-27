@@ -63,33 +63,12 @@ function Header() {
             >
               3
             </p>
-            <PaperAirplaneIcon className="navBtn" />
+            <PaperAirplaneIcon className="navBtn rotate-45" />
           </div>
 
           <PlusCircleIcon className="navBtn" />
           <UserGroupIcon className="navBtn" />
           <HeartIcon className="navBtn" />
-
-          {/** Pop-out menu */}
-          <div className="md:hidden flex items-center">
-            <button
-              className={`p-2 ${popOut && "bg-gray-100 rounded-t-full"}`}
-              onClick={() => setPopOut(!popOut)}
-            >
-              <MenuIcon className="h-6" />
-            </button>
-            {popOut && (
-              <div
-                className="absolute mt-12 flex items-center bg-gray-100 p-2 space-x-2
-            rounded-full"
-              >
-                <HomeIcon className="pop-button" />
-                <PaperAirplaneIcon className="pop-button" />
-                <HomeIcon className="pop-button" />
-                <PaperAirplaneIcon className="pop-button" />
-              </div>
-            )}
-          </div>
 
           <img
             className="h-10 w-10 rounded-full cursor-pointer object-contain p-[1.5px] border-2 border-red-500"
