@@ -9,6 +9,7 @@ import {
 } from "@heroicons/react/outline";
 import { HomeIcon } from "@heroicons/react/solid";
 import { useState } from "react";
+import { myImage } from "@/utils/constants";
 
 function Header() {
   const [popOut, setPopOut] = useState(false);
@@ -92,7 +93,7 @@ function Header() {
 
           <img
             className="h-10 w-10 rounded-full cursor-pointer object-contain p-[1.5px] border-2 border-red-500"
-            src="https://avatars.githubusercontent.com/u/117761902?v=4"
+            src={myImage}
             alt="Profile picture"
           />
         </div>

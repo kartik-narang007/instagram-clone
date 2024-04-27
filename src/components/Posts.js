@@ -1,11 +1,11 @@
 import Post from "./Post";
-
+import { myImage } from "@/utils/constants";
 const posts = [
   {
-    id: "123",
-    userName: "taleshrocha",
-    userImg: "https://github.com/taleshrocha.png",
-    img: "https://github.com/taleshrocha.png",
+    id: "1",
+    userName: "kartik_narang_007",
+    userImg: myImage,
+    img: "https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=600",
     caption: "Hello. My first post",
   },
 ];

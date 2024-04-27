@@ -1,0 +1,1 @@
+export const myImage = "https://avatars.githubusercontent.com/u/117761902?v=4"
