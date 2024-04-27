@@ -8,11 +8,13 @@ import {
   MenuIcon,
 } from "@heroicons/react/outline";
 import { HomeIcon } from "@heroicons/react/solid";
+import { useState } from "react";
 
 function Header() {
+  const [popOut, setPopOut] = useState(false);
   return (
-    <div className="">
-      <div className="flex justify-between max-w-6xl mx-5 xl:mx-auto">
+    <div className="shadow-sm border-b bg-white sticky top-0 z-50">
+      <div className="flex justify-between max-w-6xl mx-5 lg:mx-auto">
         {/** Left */}
         <div className="relative hidden lg:inline-grid w-24 cursor-pointer">
           <Image
@@ -35,7 +37,7 @@ function Header() {
           <div className="relative mt-1 p-3 rounded-md">
             <div
               className="absolute inset-y-0 pl-3 flex items-center
-          pointer-events-none"
+          pointer-events-none "
             >
               <SearchIcon className="h-5 w-5 text-gray-500" />
             </div>
@@ -49,22 +51,49 @@ function Header() {
         </div>
 
         {/** Right */}
-
         <div className="flex items-center justify-end space-x-4">
           <HomeIcon className="navBtn" />
-          <div className="navBtn relative flex items-center justify-center">
-            <PaperAirplaneIcon className="navBtn rotate-45" />
-            <div className="absolute -top-1 -right-2 bg-red-400 rounded-full h-5 w-5 flex items-center justify-center animate-pulse text-white">
+
+          <div className="hidden md:inline-flex relative">
+            <p
+              className="absolute -top-2 -right-1 text-xs h-5
+             w-5 rounded-full bg-red-500 flex items-center
+            justify-center animate-pulse text-white"
+            >
               3
-            </div>
+            </p>
+            <PaperAirplaneIcon className="navBtn" />
           </div>
+
           <PlusCircleIcon className="navBtn" />
           <UserGroupIcon className="navBtn" />
           <HeartIcon className="navBtn" />
+
+          {/** Pop-out menu */}
+          <div className="md:hidden flex items-center">
+            <button
+              className={`p-2 ${popOut && "bg-gray-100 rounded-t-full"}`}
+              onClick={() => setPopOut(!popOut)}
+            >
+              <MenuIcon className="h-6" />
+            </button>
+            {popOut && (
+              <div
+                className="absolute mt-12 flex items-center bg-gray-100 p-2 space-x-2
+            rounded-full"
+              >
+                <HomeIcon className="pop-button" />
+                <PaperAirplaneIcon className="pop-button" />
+                <HomeIcon className="pop-button" />
+                <PaperAirplaneIcon className="pop-button" />
+              </div>
+            )}
+          </div>
+
           <img
+            className="h-10 w-10 rounded-full cursor-pointer object-contain p-[1.5px] border-2 border-red-500"
             src="https://avatars.githubusercontent.com/u/117761902?v=4"
-            alt="Profile"
-            className="h-10 w-10 rounded-full cursor-pointer"
+            alt="Profile picture"
           />
         </div>
       </div>
